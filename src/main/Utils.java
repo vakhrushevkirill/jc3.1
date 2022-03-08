@@ -21,6 +21,11 @@ public class Utils {
 
     }
 
+    public void createWorkDir(){
+        File worker = new File(workerDir);
+        worker.mkdir();
+    }
+
     public void makeDir(){
         if (src.mkdir()){
             log.append("Create " + src.getAbsolutePath() + "\n");
