@@ -1,0 +1,7 @@
+Create D:\sources\java\netology\javacore\jc3.1\games\src
+Create D:\sources\java\netology\javacore\jc3.1\games\res
+Create D:\sources\java\netology\javacore\jc3.1\games\savegames
+Create D:\sources\java\netology\javacore\jc3.1\games\temp
+Create D:\sources\java\netology\javacore\jc3.1\games\res\drawables
+Create D:\sources\java\netology\javacore\jc3.1\games\res\vectors
+Create D:\sources\java\netology\javacore\jc3.1\games\res\icons
