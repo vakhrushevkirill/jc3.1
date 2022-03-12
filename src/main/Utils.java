@@ -6,16 +6,16 @@ import java.io.IOException;
 
 
 public class Utils {
-    public String workerDir = "D:\\sources\\java\\netology\\javacore\\jc3.1\\games\\";
+    public String workerDir = "D:" + File.separator +
+            "sources" + File.separator +
+            "java" + File.separator +
+            "netology" + File.separator +
+            "javacore" + File.separator +
+            "jc3.1" + File.separator +
+            "games" + File.separator;
+
     private StringBuilder log = new StringBuilder();
-    private File src = new File(workerDir + "src");
-    private File res = new File(workerDir + "res");
-    private File resDrawables = new File(res.getAbsolutePath() + "\\" + "drawables");
-    private File resVectors = new File(res.getAbsolutePath() + "\\" + "vectors");
-    private File resIcons = new File(res.getAbsolutePath() + "\\" + "icons");
-    private File savegames = new File(workerDir + "savegames");
-    private File temp = new File(workerDir + "temp");
-    private File tempTxt = new File(temp.getAbsolutePath() + "\\temp.txt");
+
 
     public Utils(){
 
@@ -26,46 +26,18 @@ public class Utils {
         worker.mkdir();
     }
 
-    public void makeDir(){
-        if (src.mkdir()){
-            log.append("Create " + src.getAbsolutePath() + "\n");
+    public void makeDir(String path){
+        File pathFile = new File(workerDir + path);
+        if (pathFile.mkdir()){
+            log.append("Create " + pathFile.getAbsolutePath() + "\n");
         } else {
-            log.append("Path exist" + "\n");
-        }
-        if (res.mkdir()){
-            log.append("Create " + res.getAbsolutePath() + "\n");
-        } else {
-            log.append("Path exist" + "\n");
-        }
-        if (savegames.mkdir()){
-            log.append("Create " + savegames.getAbsolutePath() + "\n");
-        } else {
-            log.append("Path exist" + "\n");
-        }
-        if (temp.mkdir()){
-            log.append("Create " + temp.getAbsolutePath() + "\n");
-        } else {
-            log.append("Path exist" + "\n");
-        }
-        if (resDrawables.mkdir()){
-            log.append("Create " + resDrawables.getAbsolutePath() + "\n");
-        } else {
-            log.append("Path exist" + "\n");
-        }
-        if (resVectors.mkdir()){
-            log.append("Create " + resVectors.getAbsolutePath() + "\n");
-        } else {
-            log.append("Path exist" + "\n");
-        }
-        if (resIcons.mkdir()){
-            log.append("Create " + resIcons.getAbsolutePath() + "\n");
-        } else {
-            log.append("Path exist" + "\n");
+            log.append("Path exist" + pathFile.getAbsolutePath() + "\n");
         }
     }
 
-    public void writeLog() {
-        try (FileWriter writer = new FileWriter(tempTxt, false)){
+    public void writeLog(String filePath) {
+        File file = new File(workerDir + File.separator + filePath);
+        try (FileWriter writer = new FileWriter(file, false)){
             writer.write(log.toString());
             writer.flush();
         } catch (IOException ex){
